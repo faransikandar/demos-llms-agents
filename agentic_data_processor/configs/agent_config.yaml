@@ -1,0 +1,26 @@
+# configs/agent_config.yaml
+
+agent:
+  type: zero-shot-react-description
+  model: gpt-4o
+  temperature: 0.0
+  verbose: true
+  memory:
+    type: conversation-buffer
+    k: 10
+tools:
+  - name: drop_nulls
+    description: "Drop rows with nulls in a given column"
+  - name: convert_to_datetime
+    description: "Convert a column to datetime"
+  - name: filter_by_value
+    description: "Filter column by min/max values"
+  - name: redact_column
+    description: "Redact a column's values"
+  - name: rename_column
+    description: "Rename a column"
+  - name: standardize_text
+    description: "Lowercase and strip text in a column"
+data_dictionary:
+  path: data_dictionary/
+  format: yaml

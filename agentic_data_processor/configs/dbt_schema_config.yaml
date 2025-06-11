@@ -1,0 +1,15 @@
+version: 2
+models:
+  - name: customer_data
+    columns:
+      - name: customer_id
+        tests:
+          - not_null
+      - name: signup_date
+        description: Signup date in YYYY-MM-DD format
+      - name: gender
+        description: Gender - must be one of Male, Female, Other
+      - name: email
+        description: Email address (PII - redact)
+      - name: age
+        description: Age of customer (0-120)

@@ -1,0 +1,13 @@
+openai
+langchain
+langchain-openai
+pandas
+pyarrow
+sqlalchemy
+boto3
+pyyaml
+python-dotenv
+tqdm
+google-cloud-bigquery
+streamlit
+faiss-cpu
