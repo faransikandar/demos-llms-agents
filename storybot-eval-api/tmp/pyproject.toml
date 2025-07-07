@@ -1,0 +1,53 @@
+[tool.poetry]
+name = "lore-eval-api"
+version = "0.1.0"
+description = "Evaluation API and dashboard for Lore conversation and StoryBot analytics and recommendations"
+authors = ["Faran Sikandar <faran.sikandar@gmail.com>"]
+readme = "README.md"
+packages = [
+  { include = "api" },
+  { include = "evaluation" },
+  { include = "recommendation" },
+  { include = "utils" }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.11,<3.12"
+
+# web framework
+fastapi = "^0.110"
+uvicorn = "^0.27"
+
+# data + ml
+pydantic = "^1.10"
+pandas = "^2.2"
+numpy = "^1.26"
+scikit-learn = "^1.4"
+matplotlib = "^3.8"
+seaborn = "^0.13"
+transformers = "^4.40"
+sentence-transformers = "^2.5"
+vaderSentiment = "^3.3"
+faiss-cpu = "^1.7"
+torch = { version = "^2.3", source = "pypi", extras = ["cpu"] }  # added explicitly to support sentence-transformers
+
+# streamlit dashboard
+streamlit = "^1.34"
+
+# config
+python-dotenv = "^1.0"
+pyyaml = "^6.0"
+jinja2 = "^3.1"
+tqdm = "^4.66"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.2"
+coverage = "^7.4"
+pytest-cov = "^5.0"
+black = "^24.4"
+isort = "^5.13"
+pre-commit = "^3.7"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

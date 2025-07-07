@@ -1,0 +1,43 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[[source]]
+name = "pytorch"
+url = "https://download.pytorch.org/whl/cpu"
+verify_ssl = true
+
+[packages]
+fastapi = "*"
+uvicorn = "*"
+pydantic = ">=1.10,<2"  # v2 is not compatible with older FastAPI
+pandas = "*"
+numpy = "<2.0" #"*" # transformers incompatibility with numpy 2.0
+scikit-learn = "*"
+matplotlib = "*"
+seaborn = "*"
+transformers = "*"
+sentence-transformers = "*"
+vaderSentiment = "*"
+# faiss-cpu = "*"
+streamlit = "*"
+python-dotenv = "*"
+pyyaml = "*"
+jinja2 = "*"
+tqdm = "*"
+emoji = "*"
+
+# add torch from PyTorch's official wheel repo
+torch = {version = ">=2.1.2", index = "pytorch"}
+
+[dev-packages]
+pytest = "*"
+coverage = "*"
+pytest-cov = "*"
+black = "*"
+isort = "*"
+pre-commit = "*"
+
+[requires]
+python_version = "3.10"
